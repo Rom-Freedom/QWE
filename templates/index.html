@@ -5,8 +5,26 @@
     <title>Title</title>
 </head>
 <body>
-<h1>{{ object_list }}</h1>
 
-<h2></h2>
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Phone</th>
+    </tr>
+
+{% for obj in object_list %}
+
+    <tr>
+        <th>{{ obj.id }}</th>
+        <th>{{ obj.order_dt }}</th>
+        <th>{{ obj.order_name }}</th>
+        <th>{{ obj.order_phone }}</th>
+    </tr>
+{% endfor %}
+</table>
+
 </body>
 </html>
