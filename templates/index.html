@@ -16,10 +16,7 @@
 
 <form action="{% url 'thanks_page' %}" method="POST">
     {% csrf_token %}
-    <label>Name</label>
-    <input name="name">
-    <label>Phone</label>
-    <input name="phone">
+    {{ form }}
     <button type="submit">Send</button>
 </form>
 
