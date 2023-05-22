@@ -7,5 +7,9 @@ def first_page(request):
     return render(request, './index.html', {'object_list': object_list})
 
 def thanks_page(request):
-    return render(request, './thanks_page.html')
+    name = request.GET['name']
+    phone = request.GET['phone']
+    element = Order(order_name=name, order_phone=phone).save()
+    return render(request, './thanks_page.html', {'name': name,
+                                                  'phone': phone})
 
